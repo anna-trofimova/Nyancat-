@@ -2,14 +2,14 @@
 function Player(canvas){
   this.canvas = canvas;
   this.ctx = this.canvas.getContext('2d');
-  this.x = this.canvas.width/2 -20;
-  this.y = this.canvas.height - 40 ;
-  this.velocity = 1;
+  this.x = this.canvas.width/2 -15;
+  this.y = this.canvas.height - 30 ;
+  this.velocity = 3;
   this.direction = -1;
   this.color = 'red';
   this.lives = 3;
-  this.width = 120;
-  this.height = 40;
+  this.width = 60;
+  this.height = 30;
   
 }
 
@@ -24,11 +24,12 @@ Player.prototype.move = function(){
   }
 
 Player.prototype.draw = function(){
-  /*this.ctx.fillStyle = this.color;
+ /* this.ctx.fillStyle = this.color;
   this.ctx.fillRect(this.x, this.y, this.width, this.height)*/
+
   var cat = new Image();
   this.type === "cat" 
-  cat.src ='cat2.png'
+  cat.src ='cat4.png'
   
   this.ctx.drawImage(cat, this.x, this.y, this.width, this.height)
 }

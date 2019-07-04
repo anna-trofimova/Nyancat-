@@ -9,26 +9,30 @@ function Game(canvas) {
   this.onGameOver = null;
   this.gameScore = 0;
   
+  
 }
 
 Game.prototype.startGame = function() {
+  
+
   this.player = new Player(this.canvas)
   this.setLives(this.player.lives);
-  var newEnemy = new Enemy(this.canvas, 200);
 
+  var imageArr = ['kekesik.png', 'carrot.png', 'ok.jpg'];
+
+  var newEnemy = new Enemy(this.canvas, 200);
   this.enemies.push(newEnemy);
   console.log(this.player)
 
+
   var loop = () => {
     if (Math.random() > 0.99) {
-      
       var randomX = Math.random() * this.canvas.width - 100;
-      var randomWidth = Math.random() * 50;
-      var newEnemy = new Enemy(this.canvas, randomX, randomWidth);
+      var newEnemy = new Enemy(this.canvas, randomX, imageArr[Math.floor(Math.random()* imageArr.length)]);
       this.enemies.push(newEnemy);
       var newDonut = new Donut(this.canvas, randomX);
       this.donuts.push(newDonut);
-    }
+    };
     
     this.update();
     this.clear();

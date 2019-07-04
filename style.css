@@ -57,7 +57,14 @@ html {
   font-size: 35px;
 }
  
- 
+ p{
+   color:black;
+   display: flex;
+ }
+.status{
+  display: flex;
+  flex-direction: column;
+}
  
  /* ---- layout ---- */
  

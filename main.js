@@ -2,6 +2,8 @@
 var score ;
 
 function main() {
+  var music = new Audio;
+  music.src='nyan-cat.mp3'
    var mainElement = document.querySelector('#site-main')
    function buildDom(html){
     mainElement.innerHTML = html;  
@@ -23,11 +25,18 @@ function main() {
   //createSplashScreen()
 
   function createGameScreen(){
+    music.play();
+    music.addEventListener('ended', function(){
+      this.currentTime = 0;
+      music.play();
+    })
     var createGameScreen = buildDom(`
     <section class = "gameScreen"> 
     <canvas width ="500px" height="500px"></canvas>
+    <div class = "status">
     <p id = "score">Score:0</p> 
     <p id = "lives">Lives:</p>
+    </div>
     <section>
     `);
     
@@ -59,6 +68,8 @@ function main() {
   //createGameScreen()
   
   function createGameOverScreen(){
+    music.pause();
+    music.currentTime = 0;
     var gameOverScreen = buildDom(`
     <section>
     <h1>GameOver!</h1>
