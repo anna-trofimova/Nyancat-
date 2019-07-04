@@ -4,7 +4,7 @@
 
 **Description**
 
-My first simple game for practice javacript. Use constructor function. The game have enemies – blocks. And one player with 3 lives. Player must escape all blocks.
+My first simple game for practice javacript. The game have enemies – blocks. And one player with 3 lives. Player must escape all blocks.Blocks move from the top to the down and come back. Player can move left/right. If player touchs block 3 times, he will die. 
 
  
 
@@ -16,7 +16,7 @@ My first simple game for practice javacript. Use constructor function. The game 
 
 3)connection between screens
 
-4)create main.js, game. js
+4)create main.js, game.js
 
 5)create loop
 
@@ -76,9 +76,11 @@ Game.js:
 
 ·      this.checkLives()
 
-·      this.crossing()
+·      this.collision()
 
 ·      this.startGame()
+
+.      this.checkCollision()
 
 ·      this.gameOver()
 
@@ -128,7 +130,7 @@ Enemy.js
 
 Definition of the different states and their transition (transition functions)
 
-·      splashScreen
+·      splashScreen (have accesses)
 
 ·      gameScreen
 
@@ -136,20 +138,64 @@ Definition of the different states and their transition (transition functions)
 
 **Task**
 
-1)   enemy.js
+4)   main.js
 
-2)   palyer.js
+·      create acrhives
+
+·      main()
+
+·      create SpashScreen
+
+·      create GameScreen
+
+·      create GameOverScreen
+
+·      buildDom
 
 3)   game.js
 
-4)   main.js
+·      this.startGame()
+
+.      this.checkCollision()
+
+·      this.draw()
+
+·      this.clear()
+
+·      this.checkLives()
+
+·      this.update()
+
+·      this.gameOver()
+
+3)   enemy.js 
+
+·      this.move()
+
+·      this.draw()
+
+·      this.update
+
+·      conditions for Enemy and Player
+
+4)   palyer.js
+
+·      this.move
+
+·      this.draw
+
+·      this.eleminateEnemy 
+
+
+
+
+
+
 
 **Git**
 
 URls for the project repo and deploy [Link Repo](http://github.com/) [Link Deploy](http://github.com/)
 
-Slides
 
-URls for the project presentation (slides) [Link Slides.com](http://slides.com/)
 
  
