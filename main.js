@@ -3,7 +3,7 @@ var score ;
 
 function main() {
   var music = new Audio;
-  music.src='nyan-cat.mp3'
+  music.src='./sounds/nyan-cat.mp3'
    var mainElement = document.querySelector('#site-main')
    function buildDom(html){
     mainElement.innerHTML = html;  
@@ -14,8 +14,9 @@ function main() {
   function createSplashScreen(){
   var splashScreen = buildDom(`
      <section>
-     <h1>Hello, surviver!</h1>
+     <h1>Hello, survivor!</h1>
      <button>Start Game</button>
+     <img class = "page" src="nunada.gif" height="350" width="350" >
      </section>
   `);
    var startButton = document.querySelector('button');
@@ -33,9 +34,16 @@ function main() {
     var createGameScreen = buildDom(`
     <section class = "gameScreen"> 
     <canvas width ="500px" height="500px"></canvas>
+    <div class = "style">
     <div class = "status">
+    <img src = "donut.png" height="15" width="15">
     <p id = "score">Score:0</p> 
+    </div>
+
+    <div class = "status">
+    <img src = "C__fakepath_heart.png" height="15" width="15">
     <p id = "lives">Lives:</p>
+    </div>
     </div>
     <section>
     `);
@@ -74,6 +82,8 @@ function main() {
     <section>
     <h1>GameOver!</h1>
     <button>Restart</button>
+    <img class = "page3" src="cry.gif" height="350" width="350" >
+    </section>
     `)
     var restartButton = document.querySelector('button')
     restartButton.addEventListener('click', createGameScreen)

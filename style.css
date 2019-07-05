@@ -41,10 +41,6 @@ html {
  }
  
  
- h2 {}
- 
- h3 {}
- 
  button {
   background-color:white; 
   border: 2px solid gray;
@@ -63,32 +59,30 @@ html {
  }
 .status{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
- 
- /* ---- layout ---- */
- 
+ .style{
+  display: flex;
+  flex-direction: column;
 
- 
+ }
+
+
  #site-main {
   margin-bottom: 60px;
   height: 100vh;
  }
  
+.page{
+  position: absolute;
+  bottom:0;
+  left:0;
+}
+.page3{
+  position: absolute;
+  bottom:0;
+  right:0;
 
+}
  
  
- 
- /* ---- components ---- */
- 
- 
- 
- /* ---- section ---- */
- 
- section.testimonials {
-  // ...
- }
- 
- section.testimonials .button {
-  margin-bottom: 10px;
- }

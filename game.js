@@ -18,7 +18,6 @@ Game.prototype.startGame = function() {
   this.player = new Player(this.canvas)
   this.setLives(this.player.lives);
 
-  var imageArr = ['kekesik.png', 'carrot.png', 'ok.jpg'];
 
   var newEnemy = new Enemy(this.canvas, 200);
   this.enemies.push(newEnemy);
@@ -28,7 +27,7 @@ Game.prototype.startGame = function() {
   var loop = () => {
     if (Math.random() > 0.99) {
       var randomX = Math.random() * this.canvas.width - 100;
-      var newEnemy = new Enemy(this.canvas, randomX, imageArr[Math.floor(Math.random()* imageArr.length)]);
+      var newEnemy = new Enemy(this.canvas, randomX);
       this.enemies.push(newEnemy);
       var newDonut = new Donut(this.canvas, randomX);
       this.donuts.push(newDonut);
@@ -43,6 +42,7 @@ Game.prototype.startGame = function() {
     } else {
       this.onGameOver();
     }
+    
   };
   loop();
 };
@@ -82,6 +82,8 @@ Game.prototype.checkCollisions = function(){
       console.log(this.enemies);
       this.player.lives--;
       this.setLives(this.player.lives);
+      var lose = new Audio('./sounds/smb_bowserfalls.wav'); 
+      lose.play();
       if(this.player.lives === 0){
         this.isGameOver = true;
       };
@@ -101,7 +103,14 @@ Game.prototype.checkCollisions = function(){
        console.log(this.donuts);
        this.gameScore++;
        this.setScore(this.gameScore)
+       var coin = new Audio('./sounds/mario_coin_sound.mp3'); 
+       coin.currentTime = 1;
+       coin.play();
      };
+     
+     if(donut.y > this.canvas.height){
+       this.donuts.splice(index, 1);
+      }
   });
 }
 
