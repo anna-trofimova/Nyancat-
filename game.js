@@ -26,7 +26,7 @@ Game.prototype.startGame = function() {
 
   var loop = () => {
     if (Math.random() > 0.99) {
-      var randomX = Math.random() * this.canvas.width - 100;
+      var randomX = Math.random() * (this.canvas.width - 100);
       var newEnemy = new Enemy(this.canvas, randomX);
       this.enemies.push(newEnemy);
       var newDonut = new Donut(this.canvas, randomX);
